@@ -55,14 +55,6 @@
   }
   
     
-//    _collectionView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-//        // 进入刷新状态后会自动调用这个block
-//    }];
-//    // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
-//    _collectionView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
-//    
-//    // 马上进入刷新状态
-//    [_collectionView.header beginRefreshing];
     
   return _collectionView;
 }
@@ -267,7 +259,7 @@
                 [Name_array addObject:responseObject[@"content"][i][@"nickname"]];
                 [Text_array addObject:responseObject[@"content"][i][@"text"]];
                 
-           
+                NSLog(@"%@",responseObject);
             }
            // NSLog(@"text is: %@",Text_array);
         }

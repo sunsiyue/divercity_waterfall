@@ -13,7 +13,9 @@
 #pragma mark - Accessors
 - (id)initWithFrame:(CGRect)frame {
   if (self = [super initWithFrame:frame]) {
-    self.backgroundColor = [UIColor redColor];
+    self.backgroundColor = [UIColor greenColor];
+  
+      
   }
   return self;
 }

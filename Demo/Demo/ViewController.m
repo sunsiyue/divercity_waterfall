@@ -13,6 +13,7 @@
 #import "AFHTTPRequestOperationManager.h"
 #import "SDWebImage/UIImageView+WebCache.h"
 #import "ImgZoomView.h"
+#import "MJRefresh.h"
 
 
 #define CELL_COUNT 10
@@ -86,15 +87,36 @@
 }
 
 - (void)viewDidLoad {
-  [self requireJSON];
     
-  [super viewDidLoad];
+    [super viewDidLoad];
+  
+//    [self requireJSON];
+    
+    [self setupDownRefresh];
 
   [self.view addSubview:self.collectionView];
     
   NSLog(@"array is: %lu",(unsigned long)Photo_array.count);
   
 }
+// 下拉刷新
+- (void)setupDownRefresh
+{
+//    UIRefreshControl *refreshVC = [[UIRefreshControl alloc] init];
+//    // 用户用手刷新时，才会触发UIControlEventValueChanged事件
+//    [refreshVC addTarget:self action:@selector(refreshStatus:) forControlEvents:UIControlEventValueChanged];
+//    [self.collectionView addSubview:refreshVC];
+//    // 马上进入刷新状态(仅仅是显示刷新状态，并不会触发UIControlEventValueChanged事件)
+//    [refreshVC beginRefreshing];
+//    // 马上加载显示数据
+//    [self requireJSON:refreshVC];
+    // 进入刷新状态
+    [self.collectionView addHeaderWithTarget:self action:@selector(requireJSON)];
+    [self.collectionView headerBeginRefreshing];
+    
+    
+}
+
 
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
@@ -131,11 +153,11 @@
                                                                               forIndexPath:indexPath];
  // cell.displayString = [NSString stringWithFormat:@"%ld", (long)indexPath.item];
 
-    double delayInSeconds = 1.5;
-    dispatch_time_t delayInNanoSeconds = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-    dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_after(delayInNanoSeconds, concurrentQueue, ^(void)
-                   {
+//    double delayInSeconds = 1.5;
+//    dispatch_time_t delayInNanoSeconds = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+//    dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+//    dispatch_after(delayInNanoSeconds, concurrentQueue, ^(void)
+//                   {
                        /* Perform your operations here */
                        if (indexPath.item < [Photo_array count]) {
                            [cell.Photo sd_setImageWithURL:[NSURL URLWithString:Photo_array[indexPath.item]]];
@@ -156,7 +178,7 @@
                           // cell.First.text = @".";
                           // [cell.contentView addSubview:cell.First];
                        }
-                   });
+//                   });
 
 
 
@@ -215,7 +237,8 @@
     return [self.cellSizes[indexPath.item] CGSizeValue];
 }
 #pragma mark - 网络请求
--(void)requireJSON {
+- (void)requireJSON
+{
     Photo_array = nil;
     Photo_array = [[NSMutableArray alloc]init];
     
@@ -248,8 +271,10 @@
             }
            // NSLog(@"text is: %@",Text_array);
         }
-        
-        
+        // 刷新数据
+        [self.collectionView reloadData];
+        // 结束刷新
+        [self.collectionView headerEndRefreshing];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"error:%@",error);

@@ -9,13 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "CHTCollectionViewWaterfallLayout.h"
 
-@interface ViewController : UIViewController <UICollectionViewDataSource, CHTCollectionViewDelegateWaterfallLayout> {
-    NSMutableArray *Photo_array;
-    NSMutableArray *Header_array;
-    NSMutableArray *Name_array;
-    NSMutableArray *Text_array;
-    
-    CGFloat content_y;
-}
+@interface ViewController : UIViewController <UICollectionViewDataSource, CHTCollectionViewDelegateWaterfallLayout>
 @property (nonatomic, strong) IBOutlet UICollectionView *collectionView;
 @end

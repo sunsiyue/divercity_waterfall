@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		10C5CFF21B590C3300C850EC /* ImgZoomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C5CFF11B590C3300C850EC /* ImgZoomView.m */; };
 		28ACC0CB181E580300454F4A /* CHTCollectionViewWaterfallFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 28ACC0CA181E580300454F4A /* CHTCollectionViewWaterfallFooter.m */; };
 		28FB2A16181580B1002B84F4 /* CHTCollectionViewWaterfallHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FB2A15181580B1002B84F4 /* CHTCollectionViewWaterfallHeader.m */; };
 		526109C516646F4D005E4B6E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526109C416646F4D005E4B6E /* UIKit.framework */; };
@@ -23,7 +22,6 @@
 		526109E416646F4D005E4B6E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 526109E316646F4D005E4B6E /* ViewController.m */; };
 		526109F01664709D005E4B6E /* CHTCollectionViewWaterfallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 526109EF1664709D005E4B6E /* CHTCollectionViewWaterfallLayout.m */; };
 		526109F31664740B005E4B6E /* CHTCollectionViewWaterfallCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 526109F21664740B005E4B6E /* CHTCollectionViewWaterfallCell.m */; };
-		6479473A56CF2237D0FC0FFB /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5BD1F17C74D1FA9651A7BE5 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E5E7073B195E341500773FD3 /* cat1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5E70737195E341500773FD3 /* cat1.jpg */; };
 		E5E7073C195E341500773FD3 /* cat2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5E70738195E341500773FD3 /* cat2.jpg */; };
 		E5E7073D195E341500773FD3 /* cat3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5E70739195E341500773FD3 /* cat3.jpg */; };
@@ -31,8 +29,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		10C5CFF01B590C2A00C850EC /* ImgZoomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImgZoomView.h; sourceTree = "<group>"; };
-		10C5CFF11B590C3300C850EC /* ImgZoomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImgZoomView.m; sourceTree = "<group>"; };
 		28ACC0C9181E580300454F4A /* CHTCollectionViewWaterfallFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTCollectionViewWaterfallFooter.h; sourceTree = "<group>"; };
 		28ACC0CA181E580300454F4A /* CHTCollectionViewWaterfallFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTCollectionViewWaterfallFooter.m; sourceTree = "<group>"; };
 		28FB2A14181580B0002B84F4 /* CHTCollectionViewWaterfallHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTCollectionViewWaterfallHeader.h; sourceTree = "<group>"; };
@@ -57,9 +53,6 @@
 		526109EF1664709D005E4B6E /* CHTCollectionViewWaterfallLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CHTCollectionViewWaterfallLayout.m; path = ../../CHTCollectionViewWaterfallLayout.m; sourceTree = "<group>"; };
 		526109F11664740B005E4B6E /* CHTCollectionViewWaterfallCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTCollectionViewWaterfallCell.h; sourceTree = "<group>"; };
 		526109F21664740B005E4B6E /* CHTCollectionViewWaterfallCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTCollectionViewWaterfallCell.m; sourceTree = "<group>"; };
-		5F73721841B708F35C966BD9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		775B5B9D38F43A163F43BA53 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		A5BD1F17C74D1FA9651A7BE5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5E70737195E341500773FD3 /* cat1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat1.jpg; sourceTree = "<group>"; };
 		E5E70738195E341500773FD3 /* cat2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat2.jpg; sourceTree = "<group>"; };
 		E5E70739195E341500773FD3 /* cat3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat3.jpg; sourceTree = "<group>"; };
@@ -74,65 +67,18 @@
 				526109C516646F4D005E4B6E /* UIKit.framework in Frameworks */,
 				526109C716646F4D005E4B6E /* Foundation.framework in Frameworks */,
 				526109C916646F4D005E4B6E /* CoreGraphics.framework in Frameworks */,
-				6479473A56CF2237D0FC0FFB /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		10C5CFEF1B5906D600C850EC /* 点击放大 */ = {
-			isa = PBXGroup;
-			children = (
-				10C5CFF01B590C2A00C850EC /* ImgZoomView.h */,
-				10C5CFF11B590C3300C850EC /* ImgZoomView.m */,
-			);
-			name = "点击放大";
-			sourceTree = "<group>";
-		};
-		10C5CFF31B5928C100C850EC /* 自定义Cell */ = {
-			isa = PBXGroup;
-			children = (
-				526109F11664740B005E4B6E /* CHTCollectionViewWaterfallCell.h */,
-				526109F21664740B005E4B6E /* CHTCollectionViewWaterfallCell.m */,
-			);
-			name = "自定义Cell";
-			sourceTree = "<group>";
-		};
-		10C5CFF41B5928CD00C850EC /* 头部 */ = {
-			isa = PBXGroup;
-			children = (
-				28FB2A14181580B0002B84F4 /* CHTCollectionViewWaterfallHeader.h */,
-				28FB2A15181580B1002B84F4 /* CHTCollectionViewWaterfallHeader.m */,
-			);
-			name = "头部";
-			sourceTree = "<group>";
-		};
-		10C5CFF51B5928D500C850EC /* 尾部 */ = {
-			isa = PBXGroup;
-			children = (
-				28ACC0C9181E580300454F4A /* CHTCollectionViewWaterfallFooter.h */,
-				28ACC0CA181E580300454F4A /* CHTCollectionViewWaterfallFooter.m */,
-			);
-			name = "尾部";
-			sourceTree = "<group>";
-		};
-		1CB54B65EB01107ADF67EBD1 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				775B5B9D38F43A163F43BA53 /* Pods.debug.xcconfig */,
-				5F73721841B708F35C966BD9 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		526109B516646F4D005E4B6E = {
 			isa = PBXGroup;
 			children = (
 				526109CA16646F4D005E4B6E /* Demo */,
 				526109C316646F4D005E4B6E /* Frameworks */,
 				526109C116646F4D005E4B6E /* Products */,
-				1CB54B65EB01107ADF67EBD1 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -150,7 +96,6 @@
 				526109C416646F4D005E4B6E /* UIKit.framework */,
 				526109C616646F4D005E4B6E /* Foundation.framework */,
 				526109C816646F4D005E4B6E /* CoreGraphics.framework */,
-				A5BD1F17C74D1FA9651A7BE5 /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -160,13 +105,15 @@
 			children = (
 				526109D316646F4D005E4B6E /* AppDelegate.h */,
 				526109D416646F4D005E4B6E /* AppDelegate.m */,
+				526109F11664740B005E4B6E /* CHTCollectionViewWaterfallCell.h */,
+				526109F21664740B005E4B6E /* CHTCollectionViewWaterfallCell.m */,
+				28FB2A14181580B0002B84F4 /* CHTCollectionViewWaterfallHeader.h */,
+				28FB2A15181580B1002B84F4 /* CHTCollectionViewWaterfallHeader.m */,
+				28ACC0C9181E580300454F4A /* CHTCollectionViewWaterfallFooter.h */,
+				28ACC0CA181E580300454F4A /* CHTCollectionViewWaterfallFooter.m */,
 				526109DC16646F4D005E4B6E /* MainStoryboard_iPhone.storyboard */,
 				526109E216646F4D005E4B6E /* ViewController.h */,
 				526109E316646F4D005E4B6E /* ViewController.m */,
-				10C5CFF41B5928CD00C850EC /* 头部 */,
-				10C5CFF51B5928D500C850EC /* 尾部 */,
-				10C5CFF31B5928C100C850EC /* 自定义Cell */,
-				10C5CFEF1B5906D600C850EC /* 点击放大 */,
 				52E121B91867F53600B9DC53 /* Vender */,
 				526109CB16646F4D005E4B6E /* Supporting Files */,
 			);
@@ -215,12 +162,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 526109E716646F4D005E4B6E /* Build configuration list for PBXNativeTarget "Demo" */;
 			buildPhases = (
-				944003FE3ADDFAE7B6845486 /* Check Pods Manifest.lock */,
 				526109BC16646F4D005E4B6E /* Sources */,
 				526109BD16646F4D005E4B6E /* Frameworks */,
 				526109BE16646F4D005E4B6E /* Resources */,
-				0BE385B221A4732CBB86F629 /* Embed Pods Frameworks */,
-				DC5C4E4C0ED6D03CDBBECFB1 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -276,54 +220,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		0BE385B221A4732CBB86F629 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		944003FE3ADDFAE7B6845486 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		DC5C4E4C0ED6D03CDBBECFB1 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		526109BC16646F4D005E4B6E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -334,7 +230,6 @@
 				28ACC0CB181E580300454F4A /* CHTCollectionViewWaterfallFooter.m in Sources */,
 				526109E416646F4D005E4B6E /* ViewController.m in Sources */,
 				526109F01664709D005E4B6E /* CHTCollectionViewWaterfallLayout.m in Sources */,
-				10C5CFF21B590C3300C850EC /* ImgZoomView.m in Sources */,
 				28FB2A16181580B1002B84F4 /* CHTCollectionViewWaterfallHeader.m in Sources */,
 				526109F31664740B005E4B6E /* CHTCollectionViewWaterfallCell.m in Sources */,
 			);
@@ -416,7 +311,6 @@
 		};
 		526109E816646F4D005E4B6E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 775B5B9D38F43A163F43BA53 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Demo/Demo-Prefix.pch";
@@ -428,7 +322,6 @@
 		};
 		526109E916646F4D005E4B6E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5F73721841B708F35C966BD9 /* Pods.release.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Demo/Demo-Prefix.pch";

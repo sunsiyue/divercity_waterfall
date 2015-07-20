@@ -26,6 +26,7 @@
  *  缓存池（用Set，存放离开屏幕的cell）
  */
 @property (nonatomic, strong) NSMutableSet *reusableCells;
+
 @end
 
 @implementation HMWaterflowView
@@ -250,6 +251,7 @@
         return HMWaterflowViewDefaultNumberOfColumns;
     }
 }
+
 /**
  *  index位置对应的高度
  */
@@ -259,6 +261,7 @@
         return [self.delegate waterflowView:self heightAtIndex:index];
     } else {
         return HMWaterflowViewDefaultCellH;
+       
     }
 }
 

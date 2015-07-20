@@ -15,11 +15,12 @@
 #import "AFNetworking.h"
 #import "UIImageView+WebCache.h"
 //#import "UIView+MJExtension.h"
-
+#define YDColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 @interface YDWaterFallViewController () <HMWaterflowViewDataSource, HMWaterflowViewDelegate>
 @property (nonatomic, strong) NSMutableArray *waters;
 @property (nonatomic, weak) HMWaterflowView *waterflowView;
 @property(nonatomic, weak) UIImageView *postImageView;
+@property (nonatomic, strong) NSMutableArray *cellSizes;
 
 @end
 
@@ -44,7 +45,7 @@
    
     // 1.瀑布流控件
     HMWaterflowView *waterflowView = [[HMWaterflowView alloc] init];
-    waterflowView.backgroundColor = [UIColor redColor];
+    waterflowView.backgroundColor = YDColor(226, 240, 229);
     // 跟随着父控件的尺寸而自动伸缩
     waterflowView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     waterflowView.frame = self.view.bounds;
@@ -97,7 +98,7 @@
 
 //        [self.waters addObjectsFromArray:newWaters];
 //        self.waters = (NSMutableArray *)[YDWater objectArrayWithKeyValuesArray:responseObject[@"content"]];
-        NSLog(@"%@",self.waters);
+        NSLog(@"%@",responseObject[@"content"]);
         // 刷新瀑布流控件
         [self.waterflowView reloadData];
         
@@ -155,11 +156,11 @@
 {
     YDWaterViewCell *cell = [YDWaterViewCell cellWithWaterflowView:waterflowView];
     
-    YDWater *water = self.waters[index];
+//    YDWater *water = self.waters[index];
     cell.water = self.waters[index];
     
-    [cell.postImageView sd_setImageWithURL:[NSURL URLWithString:water.postImage]];
-    self.postImageView.frame = cell.postImageView.frame;
+//    [cell.postImageView sd_setImageWithURL:[NSURL URLWithString:water.postImage]];
+//    self.postImageView.frame = cell.postImageView.frame;
 //    NSLog(@"%@", NSStringFromCGSize(self.postImageView.frame.size));
     return cell;
 }
@@ -169,39 +170,68 @@
     return 2;
 }
 
+//- (NSMutableArray *)cellSizesH {
+//    if (!_cellSizesH) {
+//        _cellSizesH = [NSMutableArray array];
+//        
+//            
+//            double size = arc4random() % 2 + 1.2;
+//         
+//        
+//    }
+//    return _cellSizesH;
+//}
+- (NSMutableArray *)cellSizes {
+    if (!_cellSizes) {
+        _cellSizes = [NSMutableArray array];
+        for (NSInteger i = 0; i < self.waters.count; i++) {
+            CGSize size = CGSizeMake(arc4random() % 50 + 50, arc4random() % 50 + 50);
+            _cellSizes[i] = [NSValue valueWithCGSize:size];
+            
+        }
+    }
+    return _cellSizes;
+}
+
 
 #pragma mark - 代理方法
 - (CGFloat)waterflowView:(HMWaterflowView *)waterflowView heightAtIndex:(NSUInteger)index
 {
     
+//    
+//    YDWaterViewCell *cell = [YDWaterViewCell cellWithWaterflowView:waterflowView];
+//    
+//    YDWater *water = self.waters[index];
     
-    YDWaterViewCell *cell = [YDWaterViewCell cellWithWaterflowView:waterflowView];
-    
-    YDWater *water = self.waters[index];
-    
-        [cell.postImageView sd_setImageWithURL:[NSURL URLWithString:water.postImage]];
-    [self.postImageView addSubview:cell.postImageView];
+//        [cell.postImageView sd_setImageWithURL:[NSURL URLWithString:water.postImage]];
+//    [self.postImageView addSubview:cell.postImageView];
 //    CGFloat WH =cell.postImageView.frame.size.height / 50;
 //     根据cell的宽度 和 图片的宽高比 算出 cell的高度
-    
+//    double x = 2.2;
 //    return waterflowView.cellWidth * water.h / water.w;
+//    double value = arc4random() % x;
+//    double value = (arc4random() % 0.4) + 1;
+//    CGSize size = [self.cellSizes[index] CGSizeValue];
     
-    return waterflowView.cellWidth;
+//    return waterflowView.cellWidth * (size.height / size.width);
+    return waterflowView.cellWidth * (arc4random() % 2 + 0.8);
    
     
    
 }
-//- (CGFloat)waterflowView:(HMWaterflowView *)waterflowView marginForType:(HMWaterflowViewMarginType)type;
-//{
-//    switch (type) {
-//        case HMWaterflowViewMarginTypeTop: return 30;
-//        case HMWaterflowViewMarginTypeBottom: return 50;
-//        case HMWaterflowViewMarginTypeLeft: return 10;
-//        case HMWaterflowViewMarginTypeRight: return 10;
-//        case HMWaterflowViewMarginTypeColumn: return 10;
-//        default:
-//            return 5;
-//    }
-//
-//}
+- (CGFloat)waterflowView:(HMWaterflowView *)waterflowView marginForType:(HMWaterflowViewMarginType)type;
+{
+    switch (type) {
+        case HMWaterflowViewMarginTypeTop: return 30;
+        case HMWaterflowViewMarginTypeBottom: return 10;
+        case HMWaterflowViewMarginTypeLeft: return 10;
+        case HMWaterflowViewMarginTypeRight: return 10;
+        case HMWaterflowViewMarginTypeColumn: return 10;
+        case HMWaterflowViewMarginTypeRow: return 50;
+            
+        default:
+            return 5;
+    }
+
+}
 @end

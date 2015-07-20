@@ -167,8 +167,8 @@
                            cell.UserName.text = Name_array[indexPath.item];
                            [cell.contentView addSubview:cell.UserName];
                            
-                          // cell.First.text = @".";
-                          // [cell.contentView addSubview:cell.First];
+                           cell.First.text = @".";
+                           [cell.contentView addSubview:cell.First];
                        }
 //                   });
 

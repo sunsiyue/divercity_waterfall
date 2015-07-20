@@ -59,8 +59,7 @@
       _Photo.contentMode = UIViewContentModeScaleAspectFill;
       
       // Scale the imageview to fit inside the contentView with the image centered:
-      CGRect photoViewFrame = CGRectMake(0.f, 0.f, CGRectGetMaxX(self.contentView.bounds), CGRectGetMaxY(self.contentView.bounds));
-      _Photo.frame = photoViewFrame;
+      
       _Photo.backgroundColor = [UIColor blackColor];
       _Photo.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
       _Photo.clipsToBounds = YES;
@@ -73,9 +72,7 @@
       _divercity = [UILabel new];
       // Scale the imageview to fit inside the contentView with the image centered:
       _divercity.contentMode = UIViewContentModeScaleAspectFill;
-      CGRect divercityviewFrame = CGRectMake(0.f, CGRectGetMaxY(self.contentView.bounds), CGRectGetMaxX(photoViewFrame), 30);
-      _divercity.frame = divercityviewFrame;
-      _divercity.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+           _divercity.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
       _divercity.font = [UIFont  fontWithName:@"HelveticaNeue" size:8.0];
       _divercity.numberOfLines = 2;
       _divercity.backgroundColor = [UIColor whiteColor];
@@ -89,8 +86,7 @@
       
       //FooterView显示
       _FooterView = [UIView new];
-      CGRect FooterViewFrame = CGRectMake(0.f, CGRectGetHeight(self.contentView.bounds) + CGRectGetHeight(_divercity.bounds), CGRectGetMaxX(self.contentView.bounds), 40);
-      _FooterView.frame = FooterViewFrame;
+      
       _FooterView.backgroundColor = [UIColor whiteColor];
       _FooterView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
       _FooterView.clipsToBounds = YES;
@@ -99,19 +95,16 @@
       _FooterView.layer.borderColor = [[UIColor colorWithWhite:0.8 alpha:1.0]CGColor];
       _FooterView.layer.borderWidth = 0.2;
       
-      //头像显示横坐标
-      double Header_x = 6;
+      
       
       //用户头像显示
       // NSLog(@"header is: %@",Header_array);
       _Header = [UIImageView new];
       _Header.contentMode = UIViewContentModeScaleAspectFill;
       // Scale the imageview to fit inside the contentView with the image centered:
-      CGRect HeaderViewFrame = CGRectMake(Header_x, CGRectGetHeight(photoViewFrame)+CGRectGetHeight(divercityviewFrame) + CGRectGetHeight(FooterViewFrame)/5, CGRectGetWidth(divercityviewFrame)/5, CGRectGetWidth(divercityviewFrame)/5);
-      _Header.frame = HeaderViewFrame;
-      _Header.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+            _Header.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
       _Header.clipsToBounds = YES;
-      _Header.layer.cornerRadius = CGRectGetWidth(HeaderViewFrame)/2;
+      
       _Header.layer.masksToBounds = YES;
       _Header.layer.borderColor = [[UIColor colorWithWhite:0.8 alpha:1.0]CGColor];
       _Header.layer.borderWidth = 0.2;
@@ -120,8 +113,7 @@
       //用户网名显示
       _UserName = [UILabel new];
       // Scale the imageview to fit inside the contentView with the image centered:
-      CGRect NameviewFrame = CGRectMake(CGRectGetWidth(HeaderViewFrame) + Header_x * 2 , CGRectGetHeight(photoViewFrame)+CGRectGetHeight(divercityviewFrame)-Header_x, 50,30);
-      _UserName.frame = NameviewFrame;
+      
       _UserName.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
       //     UserName.backgroundColor = [UIColor whiteColor];
       _UserName.font = [UIFont  fontWithName:@"HelveticaNeue" size:8.0];
@@ -131,8 +123,7 @@
       //用户第一语言
       _First = [UILabel new];
       // Scale the imageview to fit inside the contentView with the image centered:
-      CGRect FirstviewFrame = CGRectMake(CGRectGetWidth(HeaderViewFrame) + Header_x * 2 , CGRectGetHeight(photoViewFrame)+CGRectGetHeight(divercityviewFrame)+20, 20, 10);
-      _First.frame = FirstviewFrame;
+      
       _First.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
       //     UserName.backgroundColor = [UIColor whiteColor];
       _First.font = [UIFont  fontWithName:@"HelveticaNeue" size:20.0];
@@ -142,4 +133,33 @@
   return self;
 }
 
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    CGRect photoViewFrame = CGRectMake(0.f, 0.f, CGRectGetMaxX(self.contentView.bounds), CGRectGetMaxY(self.contentView.bounds));
+    _Photo.frame = photoViewFrame;
+    
+    CGRect divercityviewFrame = CGRectMake(0.f, CGRectGetMaxY(self.contentView.bounds), CGRectGetMaxX(photoViewFrame), 30);
+    _divercity.frame = divercityviewFrame;
+    
+    
+    CGRect FooterViewFrame = CGRectMake(0.f, CGRectGetHeight(self.contentView.bounds) + CGRectGetHeight(_divercity.bounds), CGRectGetMaxX(self.contentView.bounds), 40);
+    _FooterView.frame = FooterViewFrame;
+    
+    
+    //头像显示横坐标
+    double Header_x = 6;
+    CGRect HeaderViewFrame = CGRectMake(Header_x, CGRectGetHeight(photoViewFrame)+CGRectGetHeight(divercityviewFrame) + CGRectGetHeight(FooterViewFrame)/5, CGRectGetWidth(divercityviewFrame)/5, CGRectGetWidth(divercityviewFrame)/5);
+    _Header.frame = HeaderViewFrame;
+    _Header.layer.cornerRadius = CGRectGetWidth(HeaderViewFrame)/2;
+    
+    CGRect NameviewFrame = CGRectMake(CGRectGetWidth(HeaderViewFrame) + Header_x * 2 , CGRectGetHeight(photoViewFrame)+CGRectGetHeight(divercityviewFrame)-Header_x, 50,30);
+    _UserName.frame = NameviewFrame;
+    
+    CGRect FirstviewFrame = CGRectMake(CGRectGetWidth(HeaderViewFrame) + Header_x * 2 , CGRectGetHeight(photoViewFrame)+CGRectGetHeight(divercityviewFrame)+20, 20, 10);
+    _First.frame = FirstviewFrame;
+
+
+}
 @end

@@ -214,7 +214,13 @@
 //    CGSize size = [self.cellSizes[index] CGSizeValue];
     
 //    return waterflowView.cellWidth * (size.height / size.width);
-    return waterflowView.cellWidth * (arc4random() % 2 + 0.8);
+//    return waterflowView.cellWidth * (arc4random() % 2 + 0.8);
+    switch (index % 3) {
+        case 0: return 220;
+        case 1: return 250;
+        case 2: return 150;
+        default: return waterflowView.cellWidth;
+    }
    
     
    

@@ -98,7 +98,7 @@
 
 //        [self.waters addObjectsFromArray:newWaters];
 //        self.waters = (NSMutableArray *)[YDWater objectArrayWithKeyValuesArray:responseObject[@"content"]];
-        NSLog(@"%@",responseObject[@"content"]);
+       // NSLog(@"%@",responseObject[@"content"]);
         // 刷新瀑布流控件
         [self.waterflowView reloadData];
         
@@ -227,7 +227,7 @@
         case HMWaterflowViewMarginTypeLeft: return 10;
         case HMWaterflowViewMarginTypeRight: return 10;
         case HMWaterflowViewMarginTypeColumn: return 10;
-        case HMWaterflowViewMarginTypeRow: return 50;
+        case HMWaterflowViewMarginTypeRow: return 100;
             
         default:
             return 5;

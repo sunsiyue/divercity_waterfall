@@ -226,6 +226,7 @@
 }
 #pragma mark - CHTCollectionViewDelegateWaterfallLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
     return [self.cellSizes[indexPath.item] CGSizeValue];
 }
 #pragma mark - 网络请求

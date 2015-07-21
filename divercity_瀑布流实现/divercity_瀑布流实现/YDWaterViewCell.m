@@ -98,7 +98,7 @@
     // 第二语言
     self.secondLanguage.text = @"English";
     // 距离
- //   self.distance.text = water.;
+    self.distance.text = @"77.0";
     
 }
 - (id)initWithFrame:(CGRect)frame
@@ -205,7 +205,7 @@
         UILabel *distance = [[UILabel alloc] init];
         distance.numberOfLines = 1;
         distance.backgroundColor = [UIColor clearColor];
-        distance.font = [UIFont  fontWithName:@"HelveticaNeue" size:10.0];
+        distance.font = [UIFont  fontWithName:@"HelveticaNeue" size:12.0];
         distance.textColor = [UIColor grayColor];
         [self addSubview:distance];
         self.distance = distance;
@@ -278,7 +278,7 @@
     self.secondLanguage.frame = CGRectMake(secondLanguageViewX, secondLanguageViewY, secondLanguageViewW, secondLanguageViewH);
 
     // 距离Frame
-    CGFloat distanceViewX = secondLanguageViewX + secondLanguageViewW;
+    CGFloat distanceViewX = secondLanguageViewX + secondLanguageViewW * 3/4;
     CGFloat distanceViewY = footerViewY + headerViewH / 2;
     CGFloat distanceViewW = 30;
     CGFloat distanceViewH = 30;

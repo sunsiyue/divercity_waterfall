@@ -16,7 +16,7 @@
 /**
  *  用户的图片地址
  */
-@property (nonatomic, weak) UIImageView *postImageView;
+//@property (nonatomic, weak) UIImageView *postImageView;
 /**
  *  用户的头像地址
  */
@@ -25,7 +25,8 @@
 /**
  * 距离
  */
-@property (nonatomic, assign) double distance;
+@property (nonatomic,strong) UILabel *distance;
+//@property (nonatomic, assign) double distance;
 /**
  *  用户的昵称
  */
@@ -96,7 +97,8 @@
     self.second.text = @".";
     // 第二语言
     self.secondLanguage.text = @"English";
-    
+    // 距离
+ //   self.distance.text = water.;
     
 }
 - (id)initWithFrame:(CGRect)frame
@@ -175,7 +177,7 @@
         UILabel *firstLanguage = [[UILabel alloc] init];
         firstLanguage.numberOfLines = 1;
         firstLanguage.backgroundColor = [UIColor clearColor];
-        firstLanguage.font = [UIFont  fontWithName:@"HelveticaNeue" size:10.0];
+        firstLanguage.font = [UIFont  fontWithName:@"HelveticaNeue" size:9.0];
         firstLanguage.textColor = [UIColor grayColor];
         [self addSubview:firstLanguage];
         self.firstLanguage = firstLanguage;
@@ -194,10 +196,19 @@
         UILabel *secondLanguage = [[UILabel alloc] init];
         secondLanguage.numberOfLines = 1;
         secondLanguage.backgroundColor = [UIColor clearColor];
-        secondLanguage.font = [UIFont  fontWithName:@"HelveticaNeue" size:10.0];
+        secondLanguage.font = [UIFont  fontWithName:@"HelveticaNeue" size:9.0];
         secondLanguage.textColor = [UIColor grayColor];
         [self addSubview:secondLanguage];
         self.secondLanguage = secondLanguage;
+        
+        //距离
+        UILabel *distance = [[UILabel alloc] init];
+        distance.numberOfLines = 1;
+        distance.backgroundColor = [UIColor clearColor];
+        distance.font = [UIFont  fontWithName:@"HelveticaNeue" size:10.0];
+        distance.textColor = [UIColor grayColor];
+        [self addSubview:distance];
+        self.distance = distance;
        
     }
     return self;
@@ -253,7 +264,7 @@
     self.firstLanguage.frame = CGRectMake(firstLanguageViewX, firstLanguageViewY, firstLanguageViewW, firstLanguageViewH);
     
     // 用户第二语言－－点Frame
-    CGFloat secondViewX = firstLanguageViewX + firstLanguageViewW;
+    CGFloat secondViewX = firstLanguageViewX + firstLanguageViewW * 3/4;
     CGFloat secondViewY = footerViewY + headerViewH / 2;
     CGFloat secondViewW = 10;
     CGFloat secondViewH = 30;
@@ -266,7 +277,12 @@
     CGFloat secondLanguageViewH = 30;
     self.secondLanguage.frame = CGRectMake(secondLanguageViewX, secondLanguageViewY, secondLanguageViewW, secondLanguageViewH);
 
-    
+    // 距离Frame
+    CGFloat distanceViewX = secondLanguageViewX + secondLanguageViewW;
+    CGFloat distanceViewY = footerViewY + headerViewH / 2;
+    CGFloat distanceViewW = 30;
+    CGFloat distanceViewH = 30;
+    self.distance.frame = CGRectMake(distanceViewX, distanceViewY, distanceViewW, distanceViewH);
 
 }
 

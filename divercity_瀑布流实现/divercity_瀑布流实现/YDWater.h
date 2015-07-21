@@ -27,7 +27,7 @@ voice = "";*/
 /**
  * 距离
  */
-@property (nonatomic, assign) double distance;
+@property (nonatomic, assign) NSNumber *distance;
 /**
  *  用户的昵称
  */

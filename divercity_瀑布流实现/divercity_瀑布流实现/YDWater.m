@@ -16,6 +16,8 @@
     water.postImage = dict[@"postImage"];
     water.nickname = dict[@"nickname"];
     water.text = dict[@"text"];
+    water.distance = dict[@"distance"];
+    
     
     return water;
 }

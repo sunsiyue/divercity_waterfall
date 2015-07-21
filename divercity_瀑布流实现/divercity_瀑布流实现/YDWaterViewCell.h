@@ -11,5 +11,6 @@
 @interface YDWaterViewCell : HMWaterflowViewCell
 + (instancetype)cellWithWaterflowView:(HMWaterflowView *)waterflowView;
 //@property (nonatomic, weak) UIImageView *postImageView;
+@property (nonatomic, weak) UIImageView *postImageView;
 @property (nonatomic, strong) YDWater *water;
 @end

@@ -14,6 +14,8 @@
 #import "MJRefresh.h"
 #import "AFNetworking.h"
 #import "UIImageView+WebCache.h"
+#import "ImgZoomView.h"
+
 //#import "UIView+MJExtension.h"
 #define YDColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 @interface YDWaterFallViewController () <HMWaterflowViewDataSource, HMWaterflowViewDelegate>
@@ -59,6 +61,37 @@
     [waterflowView addFooterWithTarget:self action:@selector(loadMoreWaters)];
     
 }
+
+#pragma mark - 点击放大
+- (void)waterflowView:(HMWaterflowView *)waterflowView didSelectAtIndex:(NSUInteger)index
+{
+   // NSLog(@"index is:%lu",index);
+    YDWaterViewCell *cell = [YDWaterViewCell cellWithWaterflowView:waterflowView];
+    cell.water = self.waters[index];
+    NSLog(@"%@",self.waters[index]);
+    cell.postImageView.hidden = YES;    
+    ImgZoomView* zoomV = [[ImgZoomView alloc] initWithFirstFrame:(CGRectMake(cell.frame.origin.x, cell.frame.origin.y-content_y, cell.frame.size.width, cell.frame.size.height))];
+    zoomV.currImg = [self getImageFromURL:cell.water.postImage];
+   // zoomV.currImg = [UIImage imageNamed:@"Default.png"];
+    [zoomV show];
+    zoomV.BlockClose = ^(BOOL done){
+        cell.postImageView.hidden = NO;
+    };
+}
+#pragma mark - 点击放大－－加载图片
+-(UIImage *) getImageFromURL:(NSString *)fileURL {
+    NSLog(@"执行图片下载函数");
+    UIImage * result;
+    NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:fileURL]];
+    result = [UIImage imageWithData:data];
+    return result;
+}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    content_y = scrollView.contentOffset.y;
+    
+}
+
 /**
  *  加载最新的用户数据
  */
@@ -142,10 +175,52 @@
  */
 - (void)loadMoreWaters
 {
+    AFHTTPRequestOperationManager *mgr = [[AFHTTPRequestOperationManager alloc] init];
     
+    // 拼接参数
+    //    YDWater *waterData = [[YDWater alloc] init];
+    NSMutableDictionary *parame = [NSMutableDictionary dictionary];
+    mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",@"application/json",@"text/javascript", nil];
+    //    // 取出最前面的微博
+    //    YDStatuseFrame *firstStatues = [self.statusesFrame firstObject];
+    //    if (firstStatues) {
+    //        // 若指定此参数，则返回ID比since_id大的微博（即比since_id时间晚的微博），默认为0
+    //        parame[@"since_id"] = firstStatues.statuse.idstr;
+    //
+    //    }
+    // 发送请求
+    [mgr POST:@"http://api.imdivercity.com/Divercity/api/waterFall?gps=68,34" parameters:parame success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        //        NSLog(@"%@",responseObject[@"content"]);
+        //       NSArray *newWaters = [YDWater objectArrayWithKeyValuesArray:responseObject[@"content"]];
+        //
+        
+        NSArray *newWaters = responseObject[@"content"];
+        // 将dictArray里面的所有字典转成模型对象，放到新数组中
+        //        NSMutableArray *appArray = [NSMutableArray array];
+        // 遍历数组中的字典
+        for (NSDictionary *dict in newWaters) {
+            //创建模型对象
+            YDWater *water = [YDWater waterWithDict:dict];
+            
+            // 添加模型对象到数组中
+            [self.waters addObject:water];
+        }
+        
+        //        [self.waters addObjectsFromArray:newWaters];
+        //        self.waters = (NSMutableArray *)[YDWater objectArrayWithKeyValuesArray:responseObject[@"content"]];
+        // NSLog(@"%@",responseObject[@"content"]);
+        // 刷新瀑布流控件
+        [self.waterflowView reloadData];
+        
+        // 停止刷新
+        [self.waterflowView footerEndRefreshing];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"请求失败");
+    }];
     
    
 }
+
 #pragma mark - 数据源方法
 - (NSUInteger)numberOfCellsInWaterflowView:(HMWaterflowView *)waterflowView
 {
@@ -157,11 +232,11 @@
     YDWaterViewCell *cell = [YDWaterViewCell cellWithWaterflowView:waterflowView];
     
 //    YDWater *water = self.waters[index];
-    cell.water = self.waters[index];
+      cell.water = self.waters[index];
+  //  NSLog(@"water%@",cell.water.distance);
     
-//    [cell.postImageView sd_setImageWithURL:[NSURL URLWithString:water.postImage]];
-//    self.postImageView.frame = cell.postImageView.frame;
-//    NSLog(@"%@", NSStringFromCGSize(self.postImageView.frame.size));
+    
+
     return cell;
 }
 

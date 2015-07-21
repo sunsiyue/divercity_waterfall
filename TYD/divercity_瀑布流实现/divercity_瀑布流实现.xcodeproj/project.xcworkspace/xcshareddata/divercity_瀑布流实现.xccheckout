@@ -10,31 +10,31 @@
 	<string>divercity_瀑布流实现</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>B16F22BC-1335-4E0F-955E-F4C08C5FCF4C</key>
-		<string>https://github.com/Tangyadi/tangyadi.git</string>
+		<key>009E0B46506354DB1A86F1362778899346267176</key>
+		<string>https://github.com/sunsiyue/divercity_waterfall.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>divercity_瀑布流实现/divercity_瀑布流实现.xcodeproj/project.xcworkspace</string>
+	<string>TYD/divercity_瀑布流实现/divercity_瀑布流实现.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>B16F22BC-1335-4E0F-955E-F4C08C5FCF4C</key>
-		<string>../../..</string>
+		<key>009E0B46506354DB1A86F1362778899346267176</key>
+		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/Tangyadi/tangyadi.git</string>
+	<string>https://github.com/sunsiyue/divercity_waterfall.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>B16F22BC-1335-4E0F-955E-F4C08C5FCF4C</string>
+	<string>009E0B46506354DB1A86F1362778899346267176</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>B16F22BC-1335-4E0F-955E-F4C08C5FCF4C</string>
+			<string>009E0B46506354DB1A86F1362778899346267176</string>
 			<key>IDESourceControlWCCName</key>
-			<string>tangyadi</string>
+			<string>divercity_waterfall</string>
 		</dict>
 	</array>
 </dict>

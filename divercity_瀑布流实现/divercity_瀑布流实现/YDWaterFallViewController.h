@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YDWaterFallViewController : UIViewController
+@interface YDWaterFallViewController : UIViewController {
+    CGFloat content_y;
+}
 
 @end

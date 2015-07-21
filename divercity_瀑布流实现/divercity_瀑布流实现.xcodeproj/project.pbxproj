@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1024CA381B5CE7E500F6200F /* ImgZoomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1024CA371B5CE7E500F6200F /* ImgZoomView.m */; };
+		10326E551B5D172900FEF896 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 10326E541B5D172900FEF896 /* Default.png */; };
 		25EFE1C31B5ABDDF007833C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 25EFE1C21B5ABDDF007833C7 /* main.m */; };
 		25EFE1C61B5ABDDF007833C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 25EFE1C51B5ABDDF007833C7 /* AppDelegate.m */; };
 		25EFE1C91B5ABDDF007833C7 /* divercity______.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25EFE1C71B5ABDDF007833C7 /* divercity______.xcdatamodeld */; };
@@ -65,6 +67,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1024CA361B5CE7D800F6200F /* ImgZoomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImgZoomView.h; sourceTree = "<group>"; };
+		1024CA371B5CE7E500F6200F /* ImgZoomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImgZoomView.m; sourceTree = "<group>"; };
+		10326E541B5D172900FEF896 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		25EFE1BD1B5ABDDF007833C7 /* divercity_瀑布流实现.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "divercity_瀑布流实现.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25EFE1C11B5ABDDF007833C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25EFE1C21B5ABDDF007833C7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -175,6 +180,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1024CA351B5CE77000F6200F /* 点击放大 */ = {
+			isa = PBXGroup;
+			children = (
+				1024CA361B5CE7D800F6200F /* ImgZoomView.h */,
+				1024CA371B5CE7E500F6200F /* ImgZoomView.m */,
+			);
+			name = "点击放大";
+			sourceTree = "<group>";
+		};
 		25EFE1B41B5ABDDF007833C7 = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +251,7 @@
 		25EFE1E91B5ABE2E007833C7 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				10326E541B5D172900FEF896 /* Default.png */,
 				25EFE3231B5BBB76007833C7 /* MJExtension */,
 				25EFE2DF1B5B77CF007833C7 /* MJRefresh */,
 				25EFE2C21B5ACD6D007833C7 /* AFNetworking */,
@@ -300,6 +315,7 @@
 		25EFE25F1B5ABEB1007833C7 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				1024CA351B5CE77000F6200F /* 点击放大 */,
 				25EFE2631B5ABFFC007833C7 /* Water */,
 				25EFE1E91B5ABE2E007833C7 /* Lib */,
 			);
@@ -459,6 +475,7 @@
 				25EFE1D11B5ABDDF007833C7 /* Images.xcassets in Resources */,
 				25EFE2F91B5B90EB007833C7 /* 1.plist in Resources */,
 				25EFE2F01B5B77D0007833C7 /* MJRefresh.bundle in Resources */,
+				10326E551B5D172900FEF896 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,6 +518,7 @@
 				25EFE2DA1B5ACD6D007833C7 /* AFSecurityPolicy.m in Sources */,
 				25EFE25C1B5ABE2E007833C7 /* UIImageView+HighlightedWebCache.m in Sources */,
 				25EFE2501B5ABE2E007833C7 /* NSData+ImageContentType.m in Sources */,
+				1024CA381B5CE7E500F6200F /* ImgZoomView.m in Sources */,
 				25EFE2F21B5B77D0007833C7 /* MJRefreshConst.m in Sources */,
 				25EFE2621B5ABF6E007833C7 /* YDWaterFallViewController.m in Sources */,
 				25EFE1C61B5ABDDF007833C7 /* AppDelegate.m in Sources */,

@@ -10,12 +10,38 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "divercity_&#x7011;&#x5e03;&#x6d41;&#x5b9e;&#x73b0;/YDWaterViewCell.m"
-            timestampString = "459072004.640453"
+            timestampString = "459079928.548891"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "267"
-            endingLineNumber = "267"
+            startingLineNumber = "278"
+            endingLineNumber = "278"
             landmarkName = "-layoutSubviews"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "0"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "divercity_&#x7011;&#x5e03;&#x6d41;&#x5b9e;&#x73b0;/YDWater.m"
+            timestampString = "459084057.032385"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "+waterWithDict:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

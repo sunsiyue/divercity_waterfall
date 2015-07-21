@@ -250,34 +250,34 @@
 - (void)waterflowView:(HMWaterflowView *)waterflowView didSelectAtIndex:(NSUInteger)index
 {
    YDWaterViewCell *cell = [YDWaterViewCell cellWithWaterflowView:waterflowView];
-    cell.water = self.waters[index];
-//    cell.water.postImage
-    
-   
-    
-//    CGFloat postImageViewMidX = self.waterflowView.frame.size.width * 0.5;
-//    CGFloat postImageViewMidY = CGRectGetMidY(self.waterflowView.frame);
-//    CGFloat postImageViewW = self.waterflowView.bounds.size.width;
-//    CGFloat postImageViewH = 400;
-//    self.postImageView.center.x = (self.waterflowView.frame.size.width - 400) /2;
-//    self.postImageView.center.y = postImageViewMidY;
-    
-    
-//    cell.postImageView.userInteractionEnabled = YES;
-//     [cell.postImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTap:)]];
-    [self.discoverView addSubview:cell.postImageView];
-////   cell.postImageView.hidden = YES;
-    // 6.动画
-    CGFloat duration = 0.75;
-    [UIView animateWithDuration:duration animations:^{
-        cell.postImageView.frame = CGRectMake(0, (self.waterflowView.frame.size.height - self.waterflowView.frame.size.width)/2 , self.waterflowView.frame.size.width, self.waterflowView.frame.size.width);
-//        self.discoverView = cell.postImageView;
-        self.discoverView.userInteractionEnabled = NO;
-    } completion:^(BOOL finished) {
-        self.discoverView.userInteractionEnabled = NO;
-        
-        NSLog(@"ccc");
-    }];
+    cell.water = self.waters.[index].postImageView;
+////    cell.water.postImage
+//    
+//   
+//    
+////    CGFloat postImageViewMidX = self.waterflowView.frame.size.width * 0.5;
+////    CGFloat postImageViewMidY = CGRectGetMidY(self.waterflowView.frame);
+////    CGFloat postImageViewW = self.waterflowView.bounds.size.width;
+////    CGFloat postImageViewH = 400;
+////    self.postImageView.center.x = (self.waterflowView.frame.size.width - 400) /2;
+////    self.postImageView.center.y = postImageViewMidY;
+//    
+//    
+////    cell.postImageView.userInteractionEnabled = YES;
+////     [cell.postImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTap:)]];
+//    [self.discoverView addSubview:cell.postImageView];
+//////   cell.postImageView.hidden = YES;
+//    // 6.动画
+//    CGFloat duration = 0.75;
+//    [UIView animateWithDuration:duration animations:^{
+//        cell.postImageView.frame = CGRectMake(0, (self.waterflowView.frame.size.height - self.waterflowView.frame.size.width)/2 , self.waterflowView.frame.size.width, self.waterflowView.frame.size.width);
+////        self.discoverView = cell.postImageView;
+//        self.discoverView.userInteractionEnabled = NO;
+//    } completion:^(BOOL finished) {
+//        self.discoverView.userInteractionEnabled = NO;
+//        
+//        NSLog(@"ccc");
+//    }];
     
     
     
